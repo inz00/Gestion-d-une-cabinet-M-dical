@@ -122,4 +122,21 @@ public class Patients {
     public HashMap<String, String> obtenir_historique() {
         return historique_RDV;
     }
+    
+    //methode pour afficher les coordonnées du patient
+    public void affichage_patient(){
+        System.out.println("nom:"+nom);
+        System.out.println("prenom:"+prenom);
+        System.out.println("age:"+age);
+        System.out.println("groupe sanguin:"+groupe_sanguin);
+        System.out.println("sexe:"+sexe);
+        System.out.println("numero du telephone:"+num_tel);
+        System.out.println("adresse:"+adresse);
+        System.out.println("Antécédents médicaux:");
+           for (String antecedent : antecedents_medicaux) {
+              System.out.println("- " + antecedent);
+            }
+        System.out.println("numero du dossier:"+num_dossier);
+        System.out.println("numero d'assurance"+num_assurance);
+    }
 }
