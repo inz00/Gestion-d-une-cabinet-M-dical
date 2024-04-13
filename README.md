@@ -1,4 +1,4 @@
-Gestion d'un cabinet medical
+   GESTION D'UN CABINET MEDICAL
 
 Le logiciel doit permet l'organisation et l'automatisation de la gestion d'un cabinet
 médical, afin d'augmenter la fiabilité, l'efficacité de l'effort humain et faciliter les
@@ -20,8 +20,9 @@ médecin rédige ensuite l'ordonnance qui contient les noms des médicaments, le
 doses et la durée de jour de prise. Enfin le patient peut demander un certificat
 médical. La tenue du dossier médical du malade est une obligation professionnelle.
 De ce fait, un suivi médical lui est affecté afin de l'identifier, de lui fournir une
-évolution de sa santé, et de l'informer. 
-     Gestion des rendez-vous
+évolution de sa santé, et de l'informer.
+
+      Gestion des RendezVous
 La prise d'un RDV s'effectue directement par téléphone en précisant le nom, le prénom, la date et l'heure souhaitée. Selon la disponibilité du médecin, un rendez-
 vous, lui est attribué. La secrétaire est chargée de remplir les informations du patient sur une fiche contentant son nom, prénom, téléphone...
 
