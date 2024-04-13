@@ -1,4 +1,5 @@
 Gestion d'un cabinet medical
+
 Le logiciel doit permet l'organisation et l'automatisation de la gestion d'un cabinet
 médical, afin d'augmenter la fiabilité, l'efficacité de l'effort humain et faciliter les
 tâches pénibles au sein du cabinet. Notre application comprendra les fonctionnalités
