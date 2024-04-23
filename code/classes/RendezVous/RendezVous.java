@@ -4,10 +4,10 @@ import java.time.LocalTime;
 public class RendezVous {
     private LocalDate date;
     private LocalTime heure;
-    private Patient patient;
+    private Patients patient;
     private String etat;
     
-    public RendezVous(LocalDate date, LocalTime heure, Patient patient, String etat) {
+    public RendezVous(LocalDate date, LocalTime heure, Patients patient, String etat) {
         this.date = date;
         this.heure = heure;
         this.patient = patient;
@@ -19,7 +19,7 @@ public class RendezVous {
     public LocalTime getHeure() {
         return this.heure;
     }
-    public Patient getPatient() {
+    public Patients getPatient() {
         return this.patient;
     }
     public String getEtat() {
@@ -31,13 +31,18 @@ public class RendezVous {
     public void setHeure(LocalTime heure) {
         this.heure = heure;
     }
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
     public void setEtat(String etat) {
         this.etat = etat;
     }
 }
+
+
+
+
+
 
 
 
