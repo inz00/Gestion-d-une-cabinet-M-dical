@@ -32,7 +32,7 @@ public class GestionRdv {
         }
         return true;
     }
-    public boolean planifierRdv(LocalDate date, LocalTime heure, Patient patient) {
+    public boolean planifierRdv(LocalDate date, LocalTime heure, Patients patient) {
         // Vérifier si le créneau horaire est valide 
         if (!HeureValide(heure)) {
             System.out.println("Le cabinet est fermé à cette heure ci.");
@@ -62,7 +62,7 @@ public class GestionRdv {
     public void rechercherRdvParNom(String nomPatient) {
         System.out.println("Rendez-vous pour le patient " + nomPatient + " :");
         for (RendezVous rdv : ListeRdv) {
-            if (rdv.getPatient().getNom().equalsIgnoreCase(nomPatient)) {
+            if (rdv.getPatient().get_nom().equalsIgnoreCase(nomPatient)) {
                 System.out.println("Date : " + rdv.getDate() + " - Heure : " + rdv.getHeure());
             }
         }
@@ -74,7 +74,7 @@ public class GestionRdv {
         // Affichez les rendez-vous
         System.out.println("Rendez-vous planifiés par ordre chronologique :");
         for (RendezVous rdv : ListeRdv) {
-            System.out.println("Date : " + rdv.getDate() + " - Heure : " + rdv.getHeure() + " - Patient : " + rdv.getPatient().getNom());
+            System.out.println("Date : " + rdv.getDate() + " - Heure : " + rdv.getHeure() + " - Patient : " + rdv.getPatient().get_nom());
         }
     }
     public void afficherRendezVousDateActuelle() {
@@ -83,26 +83,7 @@ public class GestionRdv {
         System.out.println("Rendez-vous planifiés pour aujourd'hui (" + Today + "):");
         for (RendezVous rdv : ListeRdv) {
             if (rdv.getDate().equals(Today)) {
-                System.out.println("Date : " + rdv.getDate() + " - Heure : " + rdv.getHeure() + " - Patient : " + rdv.getPatient().getNom());
+                System.out.println("Date : " + rdv.getDate() + " - Heure : " + rdv.getHeure() + " - Patient : " + rdv.getPatient().get_nom());
             }
         }
     }
-    public static void main(String[] args) {
-        GestionRdv cabinet = new GestionRdv();
-
-        // Exemple d'utilisation
-        Patient patient1 = new Patient("Dupont", "Alice", 30, "O+", "F", "0123456789", "123 Rue A", "Aucun", "D12345", "A12345");
-        LocalDate dateRdv1 = LocalDate.of(2024, 4, 7);
-        LocalTime heureRdv1 = LocalTime.of(10, 0);
-        cabinet.planifierRdv(dateRdv1, heureRdv1, patient1);
-
-        Patient patient2 = new Patient("Martin", "Bob", 40, "AB-", "M", "9876543210", "456 Rue B", "Allergie aux arachides", "D67890", "A67890");
-        LocalDate dateRdv2 = LocalDate.of(2024, 4, 8);
-        LocalTime heureRdv2 = LocalTime.of(11, 0);
-        cabinet.planifierRdv(dateRdv2, heureRdv2, patient2);
-
-        cabinet.afficherRdvChronologique();
-        cabinet.afficherRendezVousDateActuelle();
-    }
-    
-}
