@@ -13,7 +13,7 @@ public class Patients {
     private ArrayList<String> antecedents_medicaux;
     private String num_dossier;
     private String num_assurance;
-    private HashMap<String, String> historique_RDV;
+
 
     // Constructeur
     public Patients(String nom, String prenom, int age, String groupe_sanguin, String sexe, String num_tel, String adresse, ArrayList<String> antecedents_medicaux, String num_dossier, String num_assurance) {
@@ -27,7 +27,7 @@ public class Patients {
         this.antecedents_medicaux = antecedents_medicaux;
         this.num_dossier = num_dossier;
         this.num_assurance = num_assurance;
-        this.historique_RDV = new HashMap<>();
+    
     }
 
     // Méthodes getters
@@ -118,10 +118,6 @@ public class Patients {
         historique_RDV.put(date, info_RDV);
     }
 
-    // Méthode pour obtenir l'historique des rendez-vous
-    public HashMap<String, String> obtenir_historique() {
-        return historique_RDV;
-    }
     
     //methode pour afficher les coordonnées du patient
     public void affichage_patient(){
