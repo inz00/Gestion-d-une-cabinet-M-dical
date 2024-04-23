@@ -5,19 +5,13 @@ import java.util.List;
 public class Medecin{
     private String nom;
     private String prenom;
-    private String mot_de_passe;
-    private String specialite;
-    private String[][] horaires_travail;
-    private Agendamedecin agenda;   //classe agendamedecin a ajouter
+    private GestionRdv agenda;   
 
     //constructeur
-    public Medecin(String nom,String prenom,String mot_de_passe,String specialite,String[][] horaires_travail){
+    public Medecin(String nom,String prenom){
         this.nom = nom;
         this.prenom = prenom;
-        this.mot_de_passe = mot_de_passe;
-        this.specialite = specialite;
-        this.horaires_travail = horaires_travail;
-        this.agendaMedecin = new AgendaMedecin(); // Initialisation de l'agenda du médecin
+        this.agenda = new GestionRdv(); 
     }
 
 
@@ -30,17 +24,8 @@ public class Medecin{
    public String getprenom(){
     return prenom;
    }
-   public String getmotdepasse(){
-    return mot_de_passe;
-   }
-   public String getspécialite() {
-    return specialite;
-}
 
-public String[][] gethorairestravail() {
-    return horaires_travail;
-}
-public List<String> getagenda(){
+public GestionRdv getagenda(){
     return agenda;
 }
 
@@ -54,41 +39,29 @@ public void setprenom(String prenom) {
     this.prenom = prenom;
 }
 
-public void setmotdepasse(String mot_de_passe) {
-    this.mot_de_passe = mot_de_passe;
-}
 
-public void setspécialite(String specialite) {
-    this.specialite = specialite;
-}
 
-public void sethorairestravail(String[][] horaires_travail) {
-    this.horaires_travail = horaires_travail;
-}
 
-public void setagenda(Agendamedecin agenda) {
+
+public void setagenda(GestionRdv agenda) {
     this.agenda = agenda;
 }
 
 //methode qui ajoute un rendez vous a l'agenda
-public ajoutRDV(LocalDate date,LocalTime heure,String patient){
-    agenda.ajouterRDV(date,heure,patient);    //methode de la classe agenda medecin
+public boolean ajoutRDV(LocalDate date,LocalTime heure,Patients patient){
+    agenda.planifierRdv(date,heure,patient);    
 }
-public suppressionRDV(LocalDate date,LocalTime heure,String patient){
-    agenda.suprimerRDV(date,heure,patient);    //methode de la classe agenda medecin
+
+//methode qui suprime un rendez vous de l'agenda
+public boolean supressionRDV(LocalDate date,LocalTime heure){
+    agenda.supprimerRendezVous(date,heure);    
 }
 
 //affichage
 public void affichagemedecin(){
     System.out.println(nom);
     System.out.println(prenom);
-    System.out.println(mot_de_passe);
-    System.out.println(horaires_travail);
-    agenda.affichage();    //methode de la classe agenda medecin
+    agenda.afficherRdvChronologique();   
 
 }
-
-
-
-
 }
